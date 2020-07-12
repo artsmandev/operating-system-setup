@@ -59,3 +59,10 @@
 # curl
   * brew install curl
   * export HOMEBREW_FORCE_BREWED_CURL=1
+
+# wget
+  * brew install wget
+
+# nmap
+  * brew install nmap
+

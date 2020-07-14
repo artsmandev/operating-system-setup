@@ -66,3 +66,23 @@
 # nmap
   * brew install nmap
 
+# speedtest
+  * brew install speedtest-cli
+
+# translate-shell
+  * brew install translate-shell
+
+# mvn
+  * brew install maven
+
+# gradle
+  * brew install gradle
+
+# intellij idea:
+  * brew cask install intellij-idea
+
+# dbeaver
+  * brew cask install dbeaver-community
+
+# docker
+  * brew cask install docker

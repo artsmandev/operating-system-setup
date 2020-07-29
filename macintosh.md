@@ -94,3 +94,6 @@
 
 # dashlane
   * brew cask install dashlane
+
+# verarcrypt
+  * brew cask install veracrypt

@@ -103,3 +103,6 @@
 # postman
   * brew cask install postman
 
+# vlc
+  * brew cask install vlc
+

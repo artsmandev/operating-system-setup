@@ -106,3 +106,6 @@
 # vlc
   * brew cask install vlc
 
+# gitkraken
+  * brew cask install gitkraken
+

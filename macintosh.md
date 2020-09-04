@@ -60,7 +60,6 @@
 
 # curl
   * brew install curl
-  * export HOMEBREW_FORCE_BREWED_CURL=1
 
 # wget
   * brew install wget
@@ -97,3 +96,16 @@
 
 # verarcrypt
   * brew cask install veracrypt
+
+# whatsapp
+  * brew cask install whatsapp
+
+# postman
+  * brew cask install postman
+
+# vlc
+  * brew cask install vlc
+
+# gitkraken
+  * brew cask install gitkraken
+

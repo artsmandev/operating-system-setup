@@ -34,3 +34,30 @@
   * Download Hack Regular Nerd Font Complete Mono in the
       * https://github.com/ryanoasis/nerd-fonts
       * https://github.com/Powerlevel9k/powerlevel9k/wiki/Install-Instructions (in case of problem)
+
+## tilix:
+  * sudo apt install tilix -y
+  * sudo update-alternatives --config x-terminal-emulator
+
+## translate-shell
+  * sudo apt install translate-shell -y
+
+## nmap
+  * sudo apt install nmap -y
+
+## docker
+  * sudo apt remove --purge docker docker-engine docker.io containerd runc
+  * sudo apt install \
+      apt-transport-https \
+      ca-certificates \
+      curl \
+      gnupg-agent \
+      software-properties-common
+  * curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  * sudo apt-key fingerprint 0EBFCD88
+  * sudo add-apt-repository \
+      "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+      $(lsb_release -cs) stable" //or focal stable"
+  * sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+  * sudo groupadd docker, only if already not exists
+  * newgroup docker

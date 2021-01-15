@@ -61,3 +61,15 @@
   * sudo apt-get install docker-ce docker-ce-cli containerd.io -y
   * sudo groupadd docker, only if already not exists
   * newgroup docker
+
+## vscode
+  * snap install code --classic
+
+## intellij
+  * snap install intellij-idea-ultimate --classic
+
+## postman
+  * snap install postman --classic
+
+## vlc
+  * snap install vlc --classic

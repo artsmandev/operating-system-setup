@@ -65,6 +65,12 @@
 ## vscode
   * snap install code --classic
 
+## sdkman
+  * curl -s "https://get.sdkman.io" | zsh
+
+## maven
+  * sudo apt install maven -y
+
 ## intellij
   * snap install intellij-idea-ultimate --classic
 

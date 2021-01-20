@@ -77,5 +77,8 @@
 ## postman
   * snap install postman --classic
 
+## dbeaver
+  ** snap install dbeaver --classic
+
 ## vlc
   * snap install vlc --classic

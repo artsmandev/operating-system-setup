@@ -1,5 +1,7 @@
 ## neofetch:
-  * sudo apt install neofetch -y
+```
+sudo apt install neofetch -y
+```
 
 ## curl:
   * echo deb http://ppa.launchpad.net/savoury1/curl34/ubuntu $(lsb_release -cs) main \

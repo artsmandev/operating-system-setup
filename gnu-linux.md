@@ -4,83 +4,131 @@ sudo apt install neofetch -y
 ```
 
 ## curl:
-  * echo deb http://ppa.launchpad.net/savoury1/curl34/ubuntu $(lsb_release -cs) main \
-      | sudo tee /etc/apt/sources.list.d/curl.list
-  * sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 374C7797FB006459
-  * sudo apt upgrade -y && sudo apt install curl -y
+```
+echo "deb http://ppa.launchpad.net/savoury1/curl34/ubuntu $(lsb_release -cs) main" \
+  | sudo tee /etc/apt/sources.list.d/curl.list &&\
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 374C7797FB006459 &&\
+sudo apt upgrade -y && sudo apt install curl -y &&\
+curl --version
+```
 
 ## vim:
-  * echo deb http://ppa.launchpad.net/jonathonf/vim-daily/ubuntu $(lsb_release -cs) main \
-      | sudo tee /etc/apt/sources.list.d/vim.list
-  * sudo apt install vim -y
+```
+echo "deb http://ppa.launchpad.net/jonathonf/vim-daily/ubuntu $(lsb_release -cs) main" \
+  | sudo tee /etc/apt/sources.list.d/vim.list &&\
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8CF63AD3F06FC659 &&\
+sudo apt install vim -y &&\
+vim --version
+```
 
 ## git:
-  * echo deb http://ppa.launchpad.net/git-core/ppa/ubuntu $(lsb_release -cs) main \
-    | sudo tee /etc/apt/sources.list.d/git.list
-  * sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8CF63AD3F06FC659
-  * sudo apt update && sudo apt install git -y
+```
+echo deb http://ppa.launchpad.net/git-core/ppa/ubuntu $(lsb_release -cs) main \
+  | sudo tee /etc/apt/sources.list.d/git.list &&\
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A1715D88E1DF1F24 &&\
+sudo apt update && sudo apt install git -y &&\
+git --version
+```
 
 ## zsh:
-  * sudo apt install zsh -y
+```
+sudo apt install zsh -y
+```
 
 ## ohmyzsh:
-  * sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  * cd $(echo $ZSH)/custom/plugins \
-      && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-      && git clone https://github.com/zsh-users/zsh-autosuggestions.git
-  * cd $(echo $ZSH)/custom/themes \
-      && git clone --depth=1 https://github.com/romkatv/powerlevel10k.git
-  * vim ~/.zshrc
-      * change theme to: ZSH_THEME=powerlevel10k/powerlevel10k
-      * change plugins to: plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
-  * Download Hack Regular Nerd Font Complete Mono in the
-      * https://github.com/ryanoasis/nerd-fonts
-      * https://github.com/Powerlevel9k/powerlevel9k/wiki/Install-Instructions (in case of problem)
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cd $(echo $ZSH)/custom/plugins &&\
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git &&\
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git &&\
+cd $(echo $ZSH)/custom/themes &&\
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git && cd ~ &&\
+sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc &&\
+sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/' ~/.zshrc &&\
+mkdir ~/.fonts &&\
+  curl https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf -o ~/.fonts/hack-regular-nerd-font-complete-mono.ttf
+```
 
 ## tilix:
-  * sudo apt install tilix -y
-  * sudo update-alternatives --config x-terminal-emulator
+```
+sudo apt install tilix -y &&\
+sudo update-alternatives --config x-terminal-emulator
+```
 
 ## translate-shell
-  * sudo apt install translate-shell -y
+```
+sudo apt install translate-shell -y
+```
 
 ## nmap
-  * sudo apt install nmap -y
+```
+sudo apt install nmap -y
+```
 
 ## docker
-  * sudo apt remove --purge docker docker-engine docker.io containerd runc
-  * sudo apt install \
-      apt-transport-https \
-      ca-certificates \
-      curl \
-      gnupg-agent \
-      software-properties-common
-  * curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  * sudo apt-key fingerprint 0EBFCD88
-  * sudo add-apt-repository \
-      "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-      $(lsb_release -cs) stable" //or focal stable"
-  * sudo apt-get install docker-ce docker-ce-cli containerd.io -y
-  * sudo groupadd docker, only if already not exists
-  * newgroup docker
+```
+sudo apt remove --purge docker docker.io containerd runc &&\
+sudo apt install \
+  apt-transport-https \
+  ca-certificates \
+  curl \
+  gnupg-agent \
+  software-properties-common -y &&\
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - &&\
+sudo apt-key fingerprint 0EBFCD88 &&\
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" &&\
+sudo apt install docker-ce docker-ce-cli containerd.io -y &&\
+sudo usermod -aG docker $(whoami) &&\
+  newgrp docker
+```
 
 ## vscode
-  * snap install code --classic
+```
+snap install code --classic
+```
 
 ## sdkman
-  * curl -s "https://get.sdkman.io" | zsh
+```
+curl -s "https://get.sdkman.io" | zsh
+```
 
 ## maven
-  * sudo apt install maven -y
+```
+sudo apt install maven -y
+```
 
 ## intellij
-  * snap install intellij-idea-ultimate --classic
+```
+snap install intellij-idea-ultimate --classic
+```
 
 ## postman
-  * snap install postman --classic
+```
+snap install postman --classic
+```
 
 ## dbeaver
-  ** snap install dbeaver --classic
+```
+snap install dbeaver-ce --classic
+```
 
 ## vlc
-  * snap install vlc --classic
+```
+snap install vlc --classic
+```
+
+## flameshot
+```
+snap install flameshot --classic
+```
+
+## tweaks
+```
+sudo apt install gnome-tweaks -y
+```
+
+## spotify
+```
+snap install spotify
+```

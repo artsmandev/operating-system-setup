@@ -113,9 +113,9 @@ snap install postman --classic
 snap install dbeaver-ce --classic
 ```
 
-## vlc
+## mpv
 ```
-snap install vlc --classic
+sudo apt install mpv -y
 ```
 
 ## flameshot
@@ -132,3 +132,37 @@ sudo apt install gnome-tweaks -y
 ```
 snap install spotify
 ```
+
+## gitkraken
+```
+snap install gitkraken --classic
+```
+
+## firefox
+```
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A6DCF7707EBC211F &&\
+  echo "deb [arch=amd64] http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu $(lsb_release -cs) main" \
+    | sudo tee /etc/apt/sources.list.d/firefox.list &&\
+sudo apt update && sudo apt upgrade && sudo apt install 
+```
+
+## speedtest
+```
+sudo apt install gnupg1 apt-transport-https dirmngr -y &&\
+  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61 &&\
+echo "deb [arch=amd64] https://ookla.bintray.com/debian generic main" \
+  | sudo tee /etc/apt/sources.list.d/speedtest.list
+sudo apt update && sudo apt upgrade && sudo apt install speedtest -y
+```
+
+## google chrome
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - &&\
+  echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" \
+    | sudo tee /etc/apt/sources.list.d/google-chrome.list &&\
+sudo apt update && sudo apt upgrade && sudo apt install google-chrome-stable -y
+
+## gnome extensions
+
+  * https://extensions.gnome.org/extension/7/removable-drive-menu/
+  * https://extensions.gnome.org/extension/906/sound-output-device-chooser/
+  * https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet

@@ -8,17 +8,12 @@ sudo apt install neofetch -y
 echo "deb http://ppa.launchpad.net/savoury1/curl34/ubuntu $(lsb_release -cs) main" \
   | sudo tee /etc/apt/sources.list.d/curl.list &&\
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 374C7797FB006459 &&\
-sudo apt upgrade -y && sudo apt install curl -y &&\
-curl --version
+sudo apt update && sudo apt install curl -y
 ```
 
 ## vim:
 ```
-echo "deb http://ppa.launchpad.net/jonathonf/vim-daily/ubuntu $(lsb_release -cs) main" \
-  | sudo tee /etc/apt/sources.list.d/vim.list &&\
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8CF63AD3F06FC659 &&\
-sudo apt install vim -y &&\
-vim --version
+sudo apt install vim -y
 ```
 
 ## git:
@@ -46,7 +41,8 @@ cd $(echo $ZSH)/custom/themes &&\
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc &&\
 sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/' ~/.zshrc &&\
 mkdir ~/.fonts &&\
-  curl https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf -o ~/.fonts/hack-regular-nerd-font-complete-mono.ttf
+  curl https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Regular/complete/Hack%20Regular%20Nerd%20Font%20Complete%20Mono.ttf -o ~/.fonts/hack-regular-nerd-font-complete-mono.ttf &&\
+source ~/.zshrc
 ```
 
 ## tilix:
@@ -54,6 +50,16 @@ mkdir ~/.fonts &&\
 sudo apt install tilix -y &&\
 sudo update-alternatives --config x-terminal-emulator
 ```
+  * Global
+    * 3, 5, 6, 7, 10 and 12
+  * Appearance
+    * Disable CSD, hide toobar
+    * Small
+    * 4 and 5
+    * Quake
+      * Size: 40 x 05
+      * Options
+        * 1, 3, 4, and 5
 
 ## translate-shell
 ```
@@ -143,7 +149,7 @@ snap install gitkraken --classic
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A6DCF7707EBC211F &&\
   echo "deb [arch=amd64] http://ppa.launchpad.net/ubuntu-mozilla-security/ppa/ubuntu $(lsb_release -cs) main" \
     | sudo tee /etc/apt/sources.list.d/firefox.list &&\
-sudo apt update && sudo apt upgrade && sudo apt install 
+sudo apt update && sudo apt upgrade -y
 ```
 
 ## speedtest
@@ -156,10 +162,12 @@ sudo apt update && sudo apt upgrade && sudo apt install speedtest -y
 ```
 
 ## google chrome
+```
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - &&\
   echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" \
     | sudo tee /etc/apt/sources.list.d/google-chrome.list &&\
-sudo apt update && sudo apt upgrade && sudo apt install google-chrome-stable -y
+sudo apt update && sudo apt install google-chrome-stable -y
+```
 
 ## gnome extensions
 

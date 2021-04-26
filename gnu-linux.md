@@ -169,8 +169,15 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 sudo apt update && sudo apt install google-chrome-stable -y
 ```
 
+## slack
+```
+snap install slack --classic
+```
+
 ## gnome extensions
 
   * https://extensions.gnome.org/extension/7/removable-drive-menu/
   * https://extensions.gnome.org/extension/906/sound-output-device-chooser/
   * https://github.com/paradoxxxzero/gnome-shell-system-monitor-applet
+  * https://extensions.gnome.org/extension/750/openweather/
+  * https://extensions.gnome.org/extension/2603/spotify-label/

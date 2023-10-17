@@ -7,7 +7,7 @@
  * xcode-select --install
 
 # iterm2
-  * brew cask install iterm2
+  * brew install --cask iterm2
 
 # git
   * brew install git

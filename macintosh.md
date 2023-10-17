@@ -24,18 +24,17 @@
 
 # powerlevel10k
   * git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-  * cd $(echo $ZSH)/custom/plugins \
-      && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+  * cd $(echo $ZSH)/custom/plugins \\  
+      && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \\  
       && git clone https://github.com/zsh-users/zsh-autosuggestions.git
-  * vim ~/.zshrc
-      * ZSH_THEME=powerlevel10k/powerlevel10k
-      * plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
-  * In case of problems with font's icons
-      * https://github.com/Powerlevel9k/powerlevel9k/wiki/Install-Instructions
-      * https://github.com/ryanoasis/nerd-fonts (Hack Regular Nerd Font Complete Mono)
+  * sed -i '' 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
+  * sed -i '' 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/' ~/.zshrc
+  * brew tap homebrew/cask-fonts
+  * brew install --cask font-hack-nerd-font
 
 # curl
   * brew install curl
+  * echo 'export PATH="/opt/homebrew/opt/curl/bin:$PATH"' >> ~/.zshrc
 
 # wget
   * brew install wget
@@ -49,14 +48,21 @@
 # translate-shell
   * brew install translate-shell
 
-# mvn
-  * brew install maven
+# sdkman
+  * curl -s "https://get.sdkman.io" | bash
+  * source "/Users/bruno/.sdkman/bin/sdkman-init.sh"
+
+# jdk
+  * sdk install java 21-tem
+
+# mvn 
+  * sdk install maven 3.9.5
 
 # gradle
-  * brew install gradle
+  * brew install gradle 8.4
 
 # intellij idea:
-  * brew cask install intellij-idea
+  * brew install --cask intellij-idea
 
 # dbeaver
   * brew cask install dbeaver-community

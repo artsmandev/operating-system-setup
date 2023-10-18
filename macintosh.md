@@ -11,6 +11,7 @@
 
 # git
   * brew install git
+  * export LESS=Rx4
 
 # vim
   * brew install vim
@@ -61,29 +62,33 @@
 # gradle
   * brew install gradle 8.4
 
+# jq
+  * brew install jq
+
+# httpie
+  * brew install httpie
+
 # intellij idea:
   * brew install --cask intellij-idea
+
+# vscode
+  * brew install --cask visual-studio-code
+
+# docker
+  * brew install --cask docker
+  * brew install docker-compose
+
+# colima
+  * brew install colima
+
+# postman
+  * brew cask install postman
 
 # dbeaver
   * brew cask install dbeaver-community
 
-# docker
-  * brew cask install docker
-
-# vscode
-  * brew cask install visual-studio-code
-
-# dashlane
-  * brew cask install dashlane
-
-# verarcrypt
-  * brew cask install veracrypt
-
 # whatsapp
   * brew cask install whatsapp
-
-# postman
-  * brew cask install postman
 
 # vlc
   * brew cask install vlc

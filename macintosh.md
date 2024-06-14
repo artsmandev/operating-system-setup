@@ -1,16 +1,22 @@
-# homebrew
-  * /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  * in case of problem when download XCode Command Line Tools, get it directly: https://developer.apple.com/download/more/
-  * brew analytics off
-
 # xcode command line tools
  * xcode-select --install
+ * in case of problem when download XCode Command Line Tools, get it directly: https://developer.apple.com/download/more/
+
+# homebrew
+  * /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  * eval "$(/opt/homebrew/bin/brew shellenv)"
+  * brew analytics off
+  * brew tap homebrew/homebrew-core
+
+  Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 
 # iterm2
   * brew install --cask iterm2
 
 # git
   * brew install git
+  * brew link --overwrite git
   * export LESS=Rx4
 
 # vim
@@ -28,10 +34,12 @@
   * cd $(echo $ZSH)/custom/plugins \\  
       && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \\  
       && git clone https://github.com/zsh-users/zsh-autosuggestions.git
-  * sed -i '' 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
+  * sed -i '' 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\\/powerlevel10k"/' ~/.zshrc
   * sed -i '' 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/' ~/.zshrc
-  * brew tap homebrew/cask-fonts
   * brew install --cask font-hack-nerd-font
+
+# gpg
+  * brew install gpg
 
 # curl
   * brew install curl
@@ -54,13 +62,13 @@
   * source "/Users/bruno/.sdkman/bin/sdkman-init.sh"
 
 # jdk
-  * sdk install java 21-tem
+  * sdk install java 22.0.1-tem
 
 # mvn 
-  * sdk install maven 3.9.5
+  * sdk install maven 3.9.7
 
 # gradle
-  * brew install gradle 8.4
+  * brew install gradle 8.7
 
 # jq
   * brew install jq
@@ -80,19 +88,29 @@
 
 # colima
   * brew install colima
+  * brew services start colima
+  * /opt/homebrew/opt/colima/bin/colima start -f
+
+# caffeine
+  * brew install caffeine
+
+# rectangle
+  * bre install --cask rectangle
 
 # postman
-  * brew cask install postman
+  * brew install --cask postman
 
 # dbeaver
-  * brew cask install dbeaver-community
-
-# whatsapp
-  * brew cask install whatsapp
+  * brew install --cask dbeaver-community
 
 # vlc
-  * brew cask install vlc
+  * brew install --cask vlc
 
 # gitkraken
-  * brew cask install gitkraken
+  * brew install --cask gitkraken
 
+# firefox
+  * brew install --cask firefox@developer-edition
+
+# chrome
+  * brew install --cask google@chrome

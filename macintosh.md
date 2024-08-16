@@ -4,30 +4,25 @@
 
 # homebrew
   * /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  * eval "$(/opt/homebrew/bin/brew shellenv)"
   * brew analytics off
-  * brew tap homebrew/homebrew-core
-
-  Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
-Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 
 # iterm2
   * brew install --cask iterm2
 
-# git
-  * brew install git
-  * brew link --overwrite git
-  * export LESS=Rx4
-
-# vim
-  * brew install vim
-
 # zsh
   * brew install zsh
   * chsh -s /bin/zsh
+  * echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
 
 # ohmyzsh
   * sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# git
+  * brew install git
+  * brew link --overwrite git
+  * echo 'export LESS=Rx4' >> ~/.zshrc
+  * git config --global user.name
+  * git config --global user.email
 
 # powerlevel10k
   * git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
@@ -38,12 +33,22 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
   * sed -i '' 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/' ~/.zshrc
   * brew install --cask font-hack-nerd-font
 
+# vim
+  * brew install vim
+
 # gpg
   * brew install gpg
+  * gpg --full-generate-key
+  * gpg --list-secret-keys --keyid-format=long
+  * gpg --armor --export _[key]_
+  * git config --global user.signingkey _[key]_
+  * git config --global commit.gpgsign true
 
 # curl
   * brew install curl
   * echo 'export PATH="/opt/homebrew/opt/curl/bin:$PATH"' >> ~/.zshrc
+  * echo 'export LDFLAGS="-L/opt/homebrew/opt/curl/lib"' >> ~/.zshrc
+  * echo 'export CPPFLAGS="-I/opt/homebrew/opt/curl/include"' >> ~/.zshrc
 
 # wget
   * brew install wget
@@ -62,13 +67,13 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
   * source "/Users/bruno/.sdkman/bin/sdkman-init.sh"
 
 # jdk
-  * sdk install java 22.0.1-tem
+  * sdk install java 22.0.2-tem
 
 # mvn 
-  * sdk install maven 3.9.7
+  * sdk install maven 3.9.8
 
 # gradle
-  * brew install gradle 8.7
+  * brew install gradle 8.10
 
 # jq
   * brew install jq
@@ -90,12 +95,14 @@ Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
   * brew install colima
   * brew services start colima
   * /opt/homebrew/opt/colima/bin/colima start -f
+  * colima start --cpu 2 --menory 6
+  * echo 'export DOCKER_HOST=unix://$HOME/.colima/docker/docker.sock' >> ~/.zshrc
 
 # caffeine
   * brew install caffeine
 
 # rectangle
-  * bre install --cask rectangle
+  * brew install --cask rectangle
 
 # postman
   * brew install --cask postman

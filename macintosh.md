@@ -44,6 +44,11 @@
   * git config --global user.signingkey _[key]_
   * git config --global commit.gpgsign true
 
+# ssh
+  * ssh-keygen -t ed25519 -C "email"
+  * eval "$(ssh-agent -s)"
+  * ssh-add --aple-use-keychain ~/.ssh/id_id25519
+
 # curl
   * brew install curl
   * echo 'export PATH="/opt/homebrew/opt/curl/bin:$PATH"' >> ~/.zshrc

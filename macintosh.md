@@ -98,10 +98,9 @@
 
 # colima
   * brew install colima
-  * brew services start colima
-  * /opt/homebrew/opt/colima/bin/colima start -f
   * colima start --cpu 2 --menory 6
-  * echo 'export DOCKER_HOST=unix://$HOME/.colima/docker/docker.sock' >> ~/.zshrc
+  * echo 'export DOCKER_HOST=unix://$HOME/.colima/default/docker.sock' >> ~/.zshrc
+  * add `"cliPluginsExtraDirs": [ "/opt/homebrew/lib/docker/cli-plugins" ]` into ~/.docker/config.json
 
 # caffeine
   * brew install caffeine

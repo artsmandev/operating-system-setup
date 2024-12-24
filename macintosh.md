@@ -32,6 +32,7 @@
   * sed -i '' 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\\/powerlevel10k"/' ~/.zshrc
   * sed -i '' 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/' ~/.zshrc
   * brew install --cask font-hack-nerd-font
+  * into ~/.p10k.zsh find the line `# <-- this line` and comment that
 
 # vim
   * brew install vim

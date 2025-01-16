@@ -108,6 +108,8 @@
 
 # rectangle
   * brew install --cask rectangle
+  * Next Display: ctrl + option + up
+  * Previous Display: ctrl + option + down
 
 # postman
   * brew install --cask postman

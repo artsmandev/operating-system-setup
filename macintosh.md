@@ -84,6 +84,9 @@
 # jq
   * brew install jq
 
+# yq
+  * brew install yq
+
 # httpie
   * brew install httpie
 
